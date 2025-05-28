@@ -11,6 +11,7 @@
     "@fullcalendar/daygrid": "5.11.3",
     "@fullcalendar/interaction": "5.11.3",
     "core-js": "^3.8.3",
+    "marked": "^15.0.12",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primevue": "2.9.0",

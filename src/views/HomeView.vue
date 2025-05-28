@@ -7,7 +7,7 @@
 
     <!-- Card principal -->
     <div class="info-card">
-      <h2 class="title">Tu Embarazo</h2>
+      <h2 class="title">Tu Preparacíon</h2>
 
       <div v-if="storedDate" class="summary">
         <p>Última menstruación:</p>
@@ -16,7 +16,7 @@
 
         <!-- Fecha probable de parto -->
         <div class="fpp">
-          <p>Fecha estimada de parto:</p>
+          <p>Fecha estimada:</p>
           <p class="highlight">{{ dueDate }}</p>
         </div>
 
@@ -81,11 +81,52 @@ export default {
       return Math.min((this.weeks / 40) * 100, 100).toFixed(1)
     },
     stageMessage() {
-      if (this.weeks < 13) return '¡Estás en el primer trimestre! 🌱'
-      if (this.weeks < 27) return 'Segundo trimestre en curso 🤰'
-      if (this.weeks < 37) return 'Tercer trimestre, ya casi 💫'
-      return '¡Prepárate, falta poco! 👶'
+      const mensajes = {
+        1: 'Semana 1: Tu cuerpo se prepara para una nueva vida... felina 🐾',
+        2: 'Semana 2: Se acerca el gran momento, ¡todo está en marcha! ✨',
+        3: 'Semana 3: Un pequeño maullido empieza a formarse 🐱',
+        4: 'Semana 4: ¡Un mini michi comienza a crecer! 💓',
+        5: 'Semana 5: Se forman sus primeras patitas suaves 🐾',
+        6: 'Semana 6: Sus orejitas se asoman por primera vez 👂',
+        7: 'Semana 7: ¡Ya da sus primeras vueltas dentro de ti! 🔄',
+        8: 'Semana 8: Su corazón late fuerte como un ronroneo 💗',
+        9: 'Semana 9: Su naricita está en camino 👃',
+        10: 'Semana 10: ¡Mueve su colita! 🐈',
+        11: 'Semana 11: Comienza a estirarse y a jugar 🐾',
+        12: 'Semana 12: ¡Primer trimestre completado, gatita mamá! 🌟',
+        13: 'Semana 13: Su pelaje empieza a tomar forma 🧸',
+        14: 'Semana 14: Ya puede mover sus mini bigotes ✨',
+        15: 'Semana 15: ¡Se siente su ronroneo interior! 😻',
+        16: 'Semana 16: Puede sentir tus caricias 🥹',
+        17: 'Semana 17: ¡Pequeñas zarpas en entrenamiento! 🐾',
+        18: 'Semana 18: A veces da brincos suaves ✨',
+        19: 'Semana 19: ¡Maullidos secretos en preparación! 🐈‍⬛',
+        20: 'Semana 20: ¡Mitad del camino, mamá michi! 🐱',
+        21: 'Semana 21: Sus ojos se preparan para ver el mundo 👁️',
+        22: 'Semana 22: Siente cuando le hablas 💬',
+        23: 'Semana 23: Se acurruca dentro de ti 💞',
+        24: 'Semana 24: Su cuerpito se fortalece 🐾',
+        25: 'Semana 25: Ya tiene mini uñas escondidas 🐾',
+        26: 'Semana 26: ¡Puede sentir la luz! ☀️',
+        27: 'Semana 27: Entras al tercer trimestre, mamá gatuna 🎉',
+        28: 'Semana 28: Se acomoda como bolita de lana 🧶',
+        29: 'Semana 29: Cada vez más ágil por dentro 🐱',
+        30: 'Semana 30: Está soñando con su primer maullido 💭',
+        31: 'Semana 31: Su barriguita da vueltas ✨',
+        32: 'Semana 32: Se acurruca en posición de siesta 😽',
+        33: 'Semana 33: Escucha sonidos, ¡incluyendo tu voz! 🎵',
+        34: 'Semana 34: Pronto sabrás cómo suena su primer miau 🐾',
+        35: 'Semana 35: Afina sus sentidos gatunos 🔎',
+        36: 'Semana 36: ¡Listo para explorar el mundo! 🌍',
+        37: 'Semana 37: Es un michi a término 🎀',
+        38: 'Semana 38: Ya se prepara para conocerte 🐾',
+        39: 'Semana 39: El momento está cerca, casi lo puedes abrazar 🥰',
+        40: 'Semana 40: ¡El mini michi está listo para nacer! 🐱❤️'
+      }
+
+      return mensajes[this.weeks] || 'Tu pequeño gato está creciendo felizmente dentro de ti. 🐾'
     }
+
   },
   created() {
     const saved = localStorage.getItem('lmpDate')
@@ -124,7 +165,7 @@ export default {
 }
 
 .logo {
-  width: 120px;
+  width: 200px;
   height: auto;
   object-fit: contain;
 }
